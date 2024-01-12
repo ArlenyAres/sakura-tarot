@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,4 +24,62 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+
+/* Stylos de las cartas */
+.card {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  perspective: 100px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.card .card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card .card-front,
+.card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card .card-front {
+  transform: rotateY(0deg);
+}
+
+.card .card-back {
+  transform: rotateY(180deg);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 3fr);
+  gap: 10px;
+  justify-content: center;
+}
+
+.tirada {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
