@@ -1,0 +1,49 @@
+/*TarotCardStyles.css*/
+.card {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  
+  .card .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card .card-front,
+  .card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .card .card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card .card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Otros estilos */
+  /* .grid {
+    display: grid;
+    grid-template-columns: repeat(55, 1fr);
+    gap: 10px;
+    justify-content: center;
+  } */
+  
+  /* .tirada {
+    display: flex;
+    justify-content: center;
+  }
+   */

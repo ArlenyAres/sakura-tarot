@@ -1,4 +1,5 @@
-
+// TarotMeaning.js
+"use cliente"
 import React from 'react';
 
 const TarotMeaning = ({ meaning }) => {
@@ -9,4 +10,4 @@ const TarotMeaning = ({ meaning }) => {
   );
 };
 
-export default TarotMeaning;
+export default TarotMeaning; 
