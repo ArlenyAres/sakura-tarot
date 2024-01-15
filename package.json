@@ -18,6 +18,8 @@
     "autoprefixer": "^10.0.1",
     "cypress": "^13.6.2",
     "postcss": "^8",
+    "prettier": "^3.2.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0"
   }
 }
