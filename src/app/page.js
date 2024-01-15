@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const Card = ({ x, y, angle }) => (
   <div
-    className="card absolute z-10 w-16 h-24 bg-blue-500 rounded-md border border-black"
+    className="card absolute z-10 w-16 h-24 bg-lilac-medium rounded-md border border-black"
     style={{
       left: `${y}px`,
       bottom: `${x}px`,
@@ -15,11 +15,12 @@ const Card = ({ x, y, angle }) => (
 
 const Home = () => {
   const [cards, setCards] = useState([]);
-  const NUM_CARDS = 55;
-  const CARD_SPACING = 0.09;
-  const ARC_RADIUS = 199;
+  
+  const updateCards = () => {
+    const NUM_CARDS = window.innerWidth < 640 ? 30 : 55;
+    const CARD_SPACING = 0.09;
+    const ARC_RADIUS = window.innerWidth < 640 ? 120 : 199;
 
-  useEffect(() => {
     const calculateCoords = (numCards, arcRadius, cardSpacing) => {
       const coords = [];
 
@@ -33,31 +34,34 @@ const Home = () => {
       return coords;
     };
 
-    const drawCards = () => {
-      const coords = calculateCoords(NUM_CARDS, ARC_RADIUS, CARD_SPACING);
+    const coords = calculateCoords(NUM_CARDS, ARC_RADIUS, CARD_SPACING);
 
-      setCards(
-        coords.map((coord, index) => (
-          <Card key={index} x={coord.x} y={coord.y} angle={coord.angle} />
-        ))
-      );
+    setCards(
+      coords.map((coord, index) => (
+        <Card key={index} x={coord.x} y={coord.y} angle={coord.angle} />
+      ))
+    );
+  };
+
+  useEffect(() => {
+    updateCards();
+
+    window.addEventListener('resize', updateCards);
+
+    return () => {
+      window.removeEventListener('resize', updateCards);
     };
-
-    drawCards();
-  }, []);
+  }, []); 
 
   return (
-    <div className="bg-gray-200 min-h-screen flex flex-col items-center justify-center pt-40">
-      <div id="cardContainer" className="relative mt-10">
-        {cards}
+    <div className="bg-beige min-h-screen flex flex-col items-center justify-center pt-40 pr-20">
+      <div className="flex items-center justify-center">
+        <div id="cardContainer" className="relative mt-10">
+          {cards}
+        </div>
       </div>
     </div>
   );
 };
 
 export default Home;
-
-
-
-
-
