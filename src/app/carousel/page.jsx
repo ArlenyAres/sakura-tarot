@@ -24,27 +24,34 @@ export default function Carousel() {
   );
 
   const settings = {
+    dots: false,
     infinite: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (_, next) => setActiveSlide(next),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    
   };
 
   const slides = [
     {
-      image: './carousel-1.jpg',
-      text: 'Texto para la tarjeta 1Texto para la tarjeta 1Texto para la tarjeta 1',
+      image: './card1.svg',
+      text: "1.Concéntrate en tu pregunta o situación: Antes de sacar las cartas, concéntrate en lo que quieres saber o en la situación específica sobre la que te gustaría obtener orientación en un tema relaccionado al (Pasado, Presente, y Futuro).",
+
     },
     {
-      image: './carousel-2.jpg',
-      text: 'Texto para la tarjeta 2 Texto para la tarjeta 2Texto para la tarjeta 2 Texto para la tarjeta 2 Texto para la tarjeta 2Texto para la tarjeta 2',
+      image: './card2.svg',
+      text: "2.En la pagina principal selecciona las cartas: Elige una carta para cada seccion (Pasado, Presente, y Futuro) en un total de 3 cartas por tirada. Para revelar su orden, haz clic en (Revelar).",
     },
     {
-      image: './carousel-3.jpg',
-      text: 'Texto para la tarjeta 3 Texto para la tarjeta 3Texto para la tarjeta 3 Texto para la tarjeta 3Texto para la tarjeta 3',
+      image: './card3.svg',
+      text:"3.Lee la interpretación: La interpretación de cada carta es según su sección y su significado general está en el contexto de tu pregunta o situación.",
+    },
+    {
+      image: './card4.svg',
+      text: "4.Reflexiona: Toma un momento para reflexionar sobre la interpretación proporcionada. A veces, las lecturas pueden ser simbólicas o requerir un análisis más profundo para aplicarlas a tu situación personal."
     },
   ];
 
@@ -55,7 +62,7 @@ export default function Carousel() {
 
   return (
     <div className={styles['container-carousel']}>
-      <div className={styles['carousel-row']}>
+      <div className={styles['carousel']}>
         <Slider ref={sliderRef} {...settings}>
           {slides.map((slide, index) => (
             <div
@@ -64,14 +71,24 @@ export default function Carousel() {
               onClick={() => handleImageClick(index)}
             >
               <img src={slide.image} alt={`Slide ${index}`} className={styles.img} />
-              <div className={styles['container-carousel-text']}>
-                <div className={styles['text-row']}>
-                  <div className={styles['text']}>{slides[activeSlide].text}</div>
-                </div>
-              </div>
+              <div className={styles['slide-text']}>{slide.text}</div>
             </div>
           ))}
         </Slider>
+      </div>
+      <div className={styles['navigation-dots']}>
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`${styles['dot']} ${index === activeSlide ? styles.activeDot : ''}`}
+            onClick={() => {
+              if (index < slides.length) {
+                setActiveSlide(index);
+                sliderRef.current.slickGoTo(index);
+              }
+            }}
+          ></div>
+        ))}
       </div>
     </div>
   );
