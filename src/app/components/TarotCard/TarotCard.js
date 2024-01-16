@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import './TarotCardStyles.css'
 
 
-const TarotCard = ({ card, onCardClick }) => {
+const TarotCard = ({ card }) => {
     const [flipped, setFlipped] = useState(false);
   
     const handleCardClick = () => {
       setFlipped(!flipped);
-      onCardClick(card);
+      
     };
   
     return (
