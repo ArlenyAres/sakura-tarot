@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Overlock } from 'next/font/google';
 import './globals.css';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 const overlockFont = Overlock({
   weight: ['400', '700'],
@@ -18,10 +20,10 @@ export default function RootLayout({ children }) {
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        {/* <Header /> */}
-        <main>{children}</main>
-        {/* <Footer /> */}
+      <body className={inter.className}>
+        <Header />
+        <>{children}</>
+        <Footer />
       </body>
     </html>
   );
