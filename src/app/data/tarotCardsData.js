@@ -1,37 +1,27 @@
-//tarotCardsData.js
 
 "use client";
+import React, { useState, useEffect } from 'react';
 
-import { useState, useEffect } from 'react';
-import CardDetails from "../components/CardDetails/CardDetails";
-
-function DataPage() {
-  const [cardsData, setCardsData] = useState([]);
+const TarotApiProvider = ({ children }) => {
+  const [apiData, setApiData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('https://6388b6e5a4bb27a7f78f96a5.mockapi.io/sakura-cards/');
         const data = await response.json();
-        setCardsData(data);
+        setApiData(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
+      console.log(Response)
     };
 
     fetchData();
   }, []);
 
-  return (
-    <>
-      <h1>Sakura Tarot</h1>
-      <div>
-        {cardsData.map((card) => (
-          <CardDetails key={card.id} cardData={card} />
-        ))}
-      </div>
-    </>
-  );
-}
+  return <>{children(apiData)}</>;
+};
 
-export default DataPage;
+export default TarotApiProvider;
+ 

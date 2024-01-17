@@ -2,11 +2,11 @@
 
 "use client"
 import React, { useState, useEffect } from 'react';
-import TarotCard from './components/TarotCard/TarotCard';
+import TarotCard from './components/Cards/TarotCard/TarotCard';
 import TarotMeaning from './components/TarotMeaning/TarotMeaning';
 import tarotCardsData from '../app/data/sakuraCards.json'
-import TarotCardCircle from './components/TarotCardCircle/TarotCardCircle';
-import styles from './components/TarotCard/TarotCardStyles.css';
+import TarotCardCircle from './components/Cards/TarotCardCircle/TarotCardCircle';
+
 
 const Page = () => {
   const [selectedCards, setSelectedCards] = useState([]);
