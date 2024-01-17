@@ -3,9 +3,10 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import TarotCard from './components/Cards/TarotCard/TarotCard';
-import TarotMeaning from './components/TarotMeaning/TarotMeaning';
+import TarotMeaning from './components/Cards/TarotMeaning/TarotMeaning';
 import tarotCardsData from '../app/data/sakuraCards.json'
 import TarotCardCircle from './components/Cards/TarotCardCircle/TarotCardCircle';
+
 
 
 const Page = () => {
