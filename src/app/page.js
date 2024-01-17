@@ -1,3 +1,5 @@
+//page.js
+
 "use client"
 import React, { useState, useEffect } from 'react';
 import TarotCard from './components/TarotCard/TarotCard';
@@ -31,8 +33,8 @@ const Page = () => {
   };
 
   return (
-    <div className="container-cards">
-      <div className='container-tarot-circle'>
+    <div className="container-cards ">
+      <section className='container-tarot-circle'>
         <TarotCardCircle
           numCards={NUM_CARDS}
           arcRadius={ARC_RADIUS}
@@ -40,18 +42,18 @@ const Page = () => {
           tarotCardsData={tarotCardsData}
           onCardClick={handleCardClick}
         />
-      </div>
-      <div className={`tirada ${styles.tirada}`}>
+      </section>
+      <div className={`tirada absolute`}>
         <section className="tirada-container flex">
           {selectedCards.map((card, index) => (
             <div key={card.id} className='relative'>
               <TarotCard card={card} className='flex '/> {/* Ajusta la clase según tu diseño */}
-              <TarotMeaning meaning={meanings[index]} />
+              <TarotMeaning meaning={meanings[index]} className={`meaning absolute top-`} />
             </div>
           ))}
         </section>
         <section>
-          {/* Aquí puedes agregar cualquier otro contenido que desees mostrar */}
+          {/* otro contenido  */}
         </section>
       </div>
     </div>

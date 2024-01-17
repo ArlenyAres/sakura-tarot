@@ -1,6 +1,8 @@
 // TarotMeaning.js
 "use cliente"
 import React from 'react';
+import './TarotMeaningStyles.css'
+
 
 const TarotMeaning = ({ meaning }) => {
   return (

@@ -1,14 +1,14 @@
+
 /*TarotCardStyles.css*/
 
 
 .card {
     position: absolute;
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    /* height: 140px; */
     cursor: pointer;
-    transition: transform 0.5s;
-    margin: 30rem 35rem;
-
+    right: -25.231rem;
+    margin: 36rem 2rem 31rem 37rem;
 
     transform-style: preserve-3d;
     transition: transform 0.5s;
@@ -16,8 +16,9 @@
   }
   
   .card-inner {
-
-  
+    width: 100px;
+    
+    bottom: unset;
     transform-style: preserve-3d;
     transition: transform 0.5s;
   }
@@ -30,8 +31,7 @@
   .card .card-front,
   .card .card-back {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    
     backface-visibility: hidden;
   }
   

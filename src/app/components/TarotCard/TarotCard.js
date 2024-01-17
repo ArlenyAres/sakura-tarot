@@ -32,3 +32,5 @@ const TarotCard = ({ card }) => {
   };
   
   export default TarotCard;
+
+  
