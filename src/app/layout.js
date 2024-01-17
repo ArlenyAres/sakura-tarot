@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={inter.className}>
+      <body className={overlockFont.className}>
         <Header />
         <>{children}</>
         <Footer />
