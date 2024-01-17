@@ -23,9 +23,8 @@ const Home = () => {
               height={120}
               className="rounded-full mb-4"
             />
-            PASADO
           </div>
-          <p>reading goes here</p>
+          <p>PASADO</p>
 
           <div className="flex flex-col items-center pt-[70px] w-52 h-96 bg-beige rounded-3xl border-dashed border-4 border-purple-dark text-purple-text mt-10 mb-4">
             <Image
@@ -35,9 +34,8 @@ const Home = () => {
               height={96}
               className="rounded-full mb-4"
             />
-            PRESENTE
           </div>
-          <p>reading goes here</p>
+          <p>PRESENTE</p>
           <div className="flex flex-col items-center pt-24 w-52 h-96 bg-beige rounded-3xl border-dashed border-4 border-purple-dark mt-4 mb-4">
             <Image
               src={future}
@@ -46,9 +44,8 @@ const Home = () => {
               height={96}
               className="rounded-full mb-4"
             />
-            FUTURO
           </div>
-          <p>reading goes here</p>
+          <p>FUTURO</p>
         </div>
       </div>
     </>
