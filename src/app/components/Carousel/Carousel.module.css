@@ -1,3 +1,4 @@
+
 .container {
   position: relative;
   display: flex;
@@ -6,16 +7,16 @@
   text-align: center;
   max-width: 30vW;
   max-height: 70vh;/* Ajusta este valor a lo que necesites */
-  margin: 0 auto;
+  margin: 10 auto;
   border: 1px solid #1f1b1b;
   border-color: blueviolet;
 }
 
 .carousel{
+  box-sizing: border-box;
   margin: 0 auto;
   background-color:#92609c;
   height: 508px;
-  position: relative;
   width: 393px;
 }
   
@@ -46,13 +47,16 @@
 }
 
 .arrow {
-  position: absolute;
+  position: relative;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 50px;
+  left: 80%;
+  right: 80%;
+  font-size: 30px;
   cursor: pointer;
-  color: rgb(159, 105, 159);
+  color: #4f2757;
   user-select: none;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .arrow:hover {
@@ -60,40 +64,47 @@
 }
 
 .arrowNext, .arrowPrev {
-  position: absolute; 
-  z-index: 10; 
+  position: relative;  
   background: transparent !important;
-  font-size: 60px;
-  color: rgb(125, 53, 122);
-  cursor: pointer;
 }
-
 .arrowNext {
-  top: 50px;
+  position: absolute;
+  top: 30%;
+  right: 40%;
   transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+  color: rgb(125, 53, 122);
+  user-select: none;
 }
 
 .arrowPrev {
-  top: 50%;
-  left: 40%;
+  position: absolute;
+  top: 30%;
+  left: 10%;
   transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+  color:rgb(125, 53, 122);
+  user-select: none;
+  
 }
 
 .navigation-dots {
   position: relative;
   bottom: 25%; 
-  left: 50%;
+  left: 0%;
   transform: translateX(-50%);
   z-index: 0; 
 }
 
 .dot {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 5px;
   cursor: pointer;
-  border: 3px solid rgb(34, 8, 33);
+  border: 3px solid #4f2757;
 }
 
 .dot:hover {
@@ -140,6 +151,5 @@
     font-size: 7px;
     cursor: pointer;
     color:rgb(125, 53, 122);
-
   }
 }

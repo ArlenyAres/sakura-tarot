@@ -5,23 +5,23 @@ import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './page.module.css';
+import styles from './Carousel.module.css';
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState(0);
   const sliderRef = useRef(null);
 
   const NextArrow = () => (
-    <div className={`${styles.arrow} ${styles.arrowNext}`} onClick={() => sliderRef.current.slickNext()}>
+    <div className={`${styles['arrow']} ${styles['arrowNext']}`} onClick={() => sliderRef.current.slickNext()}>
       <FontAwesomeIcon icon={faArrowRight} />
     </div>
   );
 
   const PrevArrow = () => (
-    <div className={`${styles.arrow} ${styles.arrowPrev}`} onClick={() => sliderRef.current.slickPrev()}>
+    <div className={`${styles['arrow']} ${styles['arrowPrev']}`} onClick={() => sliderRef.current.slickPrev()}>
       <FontAwesomeIcon icon={faArrowLeft} />
     </div>
-  );
+  ); 
 
   const settings = {
     dots: false,
@@ -32,7 +32,6 @@ export default function Carousel() {
     beforeChange: (_, next) => setActiveSlide(next),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    
   };
 
   const slides = [
