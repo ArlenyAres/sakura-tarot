@@ -1,5 +1,3 @@
-//page.js
-
 "use client"
 import React, { useState, useEffect } from 'react';
 import TarotCard from './components/Cards/TarotCard/TarotCard';
@@ -12,7 +10,6 @@ import TarotCardCircle from './components/Cards/TarotCardCircle/TarotCardCircle'
 const Page = () => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [meanings, setMeanings] = useState([]);
-
   const NUM_CARDS = 55;
   const ARC_RADIUS = 50;
 
@@ -40,7 +37,7 @@ const Page = () => {
           numCards={NUM_CARDS}
           arcRadius={ARC_RADIUS}
           cardSpacing={0.001}
-          tarotCardsData={tarotCardsData}
+          // tarotCardsData={cardsData}
           onCardClick={handleCardClick}
         />
       </section>
