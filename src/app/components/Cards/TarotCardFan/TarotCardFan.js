@@ -1,12 +1,10 @@
+// TarotCardFan se encargará de la representación visual de una carta en una posición específica.
+import "./TarotCardFanStyles.css";
 
- // TarotCardFan se encargará de la representación visual de una carta en una posición específica.
- import './TarotCardFanStyles.css'
+import React from "react";
 
- import React from 'react';
+//  const TarotCardFan = ({ x, y, angle, card, onCardClick }) => (
 
- const TarotCardFan = ({ x, y, angle, card, onCardClick }) => (
-  
- );
- 
- export default TarotCardFan;
- 
+//  );
+
+//  export default TarotCardFan;
