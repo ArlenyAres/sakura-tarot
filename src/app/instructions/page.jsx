@@ -1,5 +1,4 @@
-import Carousel from '../components/Carousel/Carousel';
-import InstructionsCard from '../components/InstructionsCard/InstructionsCard';
+import InstructionsCard from '../components/InstructionsCards/InstructionsCard';
 
 export default function Instructions() {
   return (
@@ -8,7 +7,7 @@ export default function Instructions() {
         <div>
           <InstructionsCard />
         </div>
-        <Carousel/>
+       
       </main>
     </>
   )
