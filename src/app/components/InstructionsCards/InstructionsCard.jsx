@@ -1,10 +1,9 @@
-import Image from "next/image"
 
 export default function InstructionsCard({ title, image, description, altText }) {
   return (
     <div className="card card-side bg-base-100 shadow-xl ">
       <figure>
-        <Image
+        <img
           src={image}
           alt={altText}
           height={320}
