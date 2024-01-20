@@ -30,7 +30,7 @@ const signupFields=[
         type:"text",
         autoComplete:"username",
         isRequired:true,
-        placeholder:"Username"   
+        placeholder:"Nombre de usuario"   
     },
     {
         labelText:"Email address",
@@ -40,7 +40,7 @@ const signupFields=[
         type:"email",
         autoComplete:"email",
         isRequired:true,
-        placeholder:"Email address"   
+        placeholder:"Correo Electrónico"   
     },
     {
         labelText:"Password",
@@ -50,17 +50,17 @@ const signupFields=[
         type:"password",
         autoComplete:"current-password",
         isRequired:true,
-        placeholder:"Password"   
+        placeholder:"Contraseña"   
     },
     {
-        labelText:"Confirm Password",
+        labelText:"Confirmar Password",
         labelFor:"confirm-password",
         id:"confirm-password",
         name:"confirm-password",
         type:"password",
         autoComplete:"confirm-password",
         isRequired:true,
-        placeholder:"Confirm Password"   
+        placeholder:"Confirmar Contraseña"   
     }
 ]
 
