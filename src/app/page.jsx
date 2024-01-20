@@ -24,8 +24,19 @@ shuffle()
           <TarotCard key={card.id} card={card} />
         ))}
       </ul>
+          
+
     </section>
   );
 };
 
 export default Home;
+
+
+
+
+/* What I need now: 
+1. useState to allow the cards to go from normal to selected
+2. Select card function onClick to log card data (id, sakuraCard, spanishName, meaning) - this needs to be limited to three cards
+3. onClick Revelar button places the cards front side up on the placeholders with the spanishName and meaning showing up beneath the card. 
+*/

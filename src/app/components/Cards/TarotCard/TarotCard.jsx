@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const TarotCard = ({ card, cardReverse }) => {
+const TarotCard = ({ card, cardsReverse }) => {
   return (
     <div>
       <span>{card.id}</span>
