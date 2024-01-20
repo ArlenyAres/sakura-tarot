@@ -1,19 +1,11 @@
 
-export default function InstructionsCard({ title, image, description, altText }) {
+export default function InstructionsCard({ title, description }) {
   return (
-    <div className="card card-side bg-base-100 shadow-xl ">
-      <figure>
-        <img
-          src={image}
-          alt={altText}
-          height={320}
-          width={320}
-          />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
+    <section className="card card-side bg-beige shadow-xl border-dashed border-4 border-purple-dark">
+      <div className="card-body px-10">
+        <h2 className="card-title pb-2">{title}</h2>
         <p>{description}</p>
       </div>
-    </div>
+    </section>
   )
 }

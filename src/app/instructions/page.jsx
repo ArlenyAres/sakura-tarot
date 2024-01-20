@@ -1,5 +1,4 @@
 import CardContainer from '../components/InstructionsCards/CardContainer';
-import styles from './page.module.css'
 
 export default function Instructions() {
   return (
