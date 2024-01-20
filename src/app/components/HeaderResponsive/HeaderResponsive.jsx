@@ -61,7 +61,7 @@ export default function HeaderResponsive() {
         <Logo />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal font-semibold text-base px-1">
+        <ul className="menu menu-horizontal font-semibold text-color text-base px-1">
           <li>
             <a>Crear mi cuenta</a>
           </li>
