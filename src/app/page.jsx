@@ -8,15 +8,13 @@ const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
 
-  //This connects to API data
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getCards();
         setCards(data);
 
-        // This shuffles the cards
+        // Shuffle the cards
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
       } catch (error) {
@@ -25,26 +23,26 @@ const Home = () => {
     };
 
     fetchData();
-  }, []);
+  }, []); // Empty dependency array ensures useEffect runs only once, similar to componentDidMount
 
-  //This allows the player to select three cards only with a pop-up if they try to select more
   const handleCardSelect = (card, isSelected) => {
-    if (isSelected && selectedCards.length < 3) {
-      setSelectedCards([...selectedCards, card]);
-    } else if (!isSelected) {
+    // Check if the user is trying to select more than three cards
+    if (isSelected && selectedCards.length >= 3) {
+      alert("Solo puedes elegir tres cartas cada lectura");
+      return;
+    }
+
+    if (isSelected) {
       setSelectedCards([...selectedCards, card]);
     } else {
-      alert("Solo puedes elegir tres cartas cada lectura");
+      setSelectedCards(selectedCards.filter((selectedCard) => selectedCard.id !== card.id));
     }
+    console.log("Selected Cards:", selectedCards); 
   };
-
-  //This console logs the info for the three cards when the player presses the Revelar button which has an onClick on it now 
 
   const handleRevelarClick = () => {
     selectedCards.forEach((selectedCard) => {
-      console.log(
-        `ID: ${selectedCard.id}, Sakura Card: ${selectedCard.sakuraCard}, Spanish Name: ${selectedCard.spanishName}, Meaning: ${selectedCard.meaning}`
-      );
+      console.log(`ID: ${selectedCard.id}, Sakura Card: ${selectedCard.sakuraCard}, Spanish Name: ${selectedCard.spanishName}, Meaning: ${selectedCard.meaning}`);
     });
   };
 
@@ -63,18 +61,19 @@ const Home = () => {
       >
         Revelar
       </button>
-      <section className="flex flex-row gap-10">
+      
+  <section className="flex flex-row gap-20">
         <card className="flex flex-col">
       <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>meaning goes here</p>
+      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
       </card>
       <card className="flex flex-col">
       <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>meaning goes here</p>
+      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
       </card>
       <card className="flex flex-col">
       <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>meaning goes here</p>
+      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
       </card>
       </section>
     </main>
@@ -82,3 +81,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

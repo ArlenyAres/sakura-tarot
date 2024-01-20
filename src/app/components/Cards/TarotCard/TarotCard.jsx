@@ -1,18 +1,17 @@
 "use client";
+
 import React, { useState } from "react";
 
 const TarotCard = ({ card, onSelect }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleCardClick = () => {
-    setIsSelected(!isSelected);
-    onSelect(card, !isSelected);
+  const handleClick = () => {
+    onSelect(card, true); 
   };
 
   return (
-    <div onClick={handleCardClick} className={`tarot-card ${isSelected ? 'selected' : ''}`}>
+    <div className="tarot-card" onClick={handleClick}>
+      {/* Your card content goes here */}
       <span>{card.id}</span>
-      <img src={card.cardsReverse.sakuraReverse} alt="Reverso" className="w-24 h-28"/>
+      <img src={card.cardsReverse.sakuraReverse} alt="Reverso" className="w-24 h-28" />
     </div>
   );
 };
