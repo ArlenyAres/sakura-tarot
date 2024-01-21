@@ -34,7 +34,6 @@ const Home = () => {
 
     setSelectedCards(prevSelectedCards => {
       if (isSelected) {
-        // Check if the card is already selected
         if (prevSelectedCards.some(selectedCard => selectedCard.id === card.id)) {
           return prevSelectedCards;
         }
