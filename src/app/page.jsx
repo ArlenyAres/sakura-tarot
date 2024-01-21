@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import TarotCard from "./components/TarotCard/TarotCard";
-import { getCards } from "./lib/data";
+import TarotCard from "../app/components/TarotCard/TarotCard";
+import { getCards } from "../app/lib/data";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
