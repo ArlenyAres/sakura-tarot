@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import TarotCard from "./components/Cards/TarotCard/TarotCard";
+import TarotCard from "./components/TarotCard/TarotCard";
 import { getCards } from "./lib/data";
 
 const Home = () => {
@@ -32,11 +32,17 @@ const Home = () => {
       return;
     }
 
-    if (isSelected) {
-      setSelectedCards([...selectedCards, card]);
-    } else {
-      setSelectedCards(selectedCards.filter((selectedCard) => selectedCard.id !== card.id));
-    }
+    setSelectedCards(prevSelectedCards => {
+      if (isSelected) {
+        // Check if the card is already selected
+        if (prevSelectedCards.some(selectedCard => selectedCard.id === card.id)) {
+          return prevSelectedCards;
+        }
+        return [...prevSelectedCards, card];
+      } else {
+        return prevSelectedCards.filter(selectedCard => selectedCard.id !== card.id);
+      }
+    });
   };
 
   const handleRevelarClick = () => {
@@ -47,8 +53,8 @@ const Home = () => {
 
   return (
     <main>
-      <section className="flex items-center">
-        <ul className="flex flex-row gap-0.5">
+      <section className="w-[95%] mt-5 pl-10 pb-20">
+        <ul className="flex flex-row gap-1">
           {cards.map((card) => (
             <TarotCard
               key={card.id}
