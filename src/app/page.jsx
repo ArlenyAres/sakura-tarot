@@ -7,6 +7,7 @@ import { getCards } from "./lib/data";
 const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [revealCards, setRevealCards] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +15,7 @@ const Home = () => {
         const data = await getCards();
         setCards(data);
 
-        // Shuffle the cards
+
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
       } catch (error) {
@@ -23,10 +24,9 @@ const Home = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures useEffect runs only once, similar to componentDidMount
+  }, []); 
 
   const handleCardSelect = (card, isSelected) => {
-    // Check if the user is trying to select more than three cards
     if (isSelected && selectedCards.length >= 3) {
       alert("Solo puedes elegir tres cartas cada lectura");
       return;
@@ -37,21 +37,25 @@ const Home = () => {
     } else {
       setSelectedCards(selectedCards.filter((selectedCard) => selectedCard.id !== card.id));
     }
-    console.log("Selected Cards:", selectedCards); 
   };
 
   const handleRevelarClick = () => {
-    selectedCards.forEach((selectedCard) => {
-      console.log(`ID: ${selectedCard.id}, Sakura Card: ${selectedCard.sakuraCard}, Spanish Name: ${selectedCard.spanishName}, Meaning: ${selectedCard.meaning}`);
-    });
+    setRevealCards(true);
   };
+
+  const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
   return (
     <main>
-      <section className="w-5/6 h-64 flex pl-36 items-center">
+      <section className="flex items-center">
         <ul className="flex flex-row gap-0.5">
           {cards.map((card) => (
-            <TarotCard key={card.id} card={card} onSelect={handleCardSelect} />
+            <TarotCard
+              key={card.id}
+              card={card}
+              onSelect={handleCardSelect}
+              disabled={revealCards} 
+            />
           ))}
         </ul>
       </section>
@@ -61,26 +65,23 @@ const Home = () => {
       >
         Revelar
       </button>
-      
-  <section className="flex flex-row gap-20">
-        <card className="flex flex-col">
-      <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
-      </card>
-      <card className="flex flex-col">
-      <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
-      </card>
-      <card className="flex flex-col">
-      <div class="w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark"></div> 
-      <p>`${selectedCard.spanishName}`:`${selectedCard.meaning}`</p>
-      </card>
+      <section className="flex flex-row gap-10">
+        {cardRoles.map((role, index) => (
+          <div key={index} className="flex flex-col">
+            <p>{role}</p>
+            <div className={`w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark ${revealCards ? 'revealed' : ''}`}>
+              {revealCards && selectedCards[index] && (
+                <img src={selectedCards[index].sakuraCard} alt={selectedCards[index].spanishName} />
+              )}
+            </div>
+            {revealCards && selectedCards[index] && (
+              <p>{`${selectedCards[index].spanishName}: ${selectedCards[index].meaning}`}</p>
+            )}
+          </div>
+        ))}
       </section>
     </main>
   );
 };
 
 export default Home;
-
-
-

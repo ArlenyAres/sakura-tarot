@@ -9,9 +9,7 @@ const TarotCard = ({ card, onSelect }) => {
 
   return (
     <div className="tarot-card" onClick={handleClick}>
-      {/* Your card content goes here */}
-      <span>{card.id}</span>
-      <img src={card.cardsReverse.sakuraReverse} alt="Reverso" className="w-24 h-28" />
+      <img src={card.cardsReverse.sakuraReverse} alt="Reverso" className="w-28 h-28 space-x-8" />
     </div>
   );
 };
