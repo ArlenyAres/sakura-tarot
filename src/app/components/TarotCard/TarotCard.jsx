@@ -1,5 +1,7 @@
 "use client";
 
+//This is the tarot card page
+
 import React, { useState } from "react";
 
 const TarotCard = ({ card, onSelect }) => {
@@ -15,3 +17,5 @@ const TarotCard = ({ card, onSelect }) => {
 };
 
 export default TarotCard;
+
+
