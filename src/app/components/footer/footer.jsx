@@ -3,8 +3,8 @@ import { faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg
 
 export default function Footer() {
     return (
-        <header className="bg-lilac-light p-4 flex justify-center md:justify-between items-center">
-            <div>
+        <footer className="bg-lilac-light p-4 flex justify-center md:justify-between items-center">
+            <div className='flex flex-row'>
                 <a href='https://www.instagram.com' target='_blank'>
                     <FontAwesomeIcon
                         icon={faInstagram}
@@ -25,7 +25,7 @@ export default function Footer() {
                 </a>
             </div>
             <p className="text-purple-dark hidden md:block"> ® 2024 Mystika. All rights reserved.</p>
-        </header>
+        </footer>
 
     )
 };

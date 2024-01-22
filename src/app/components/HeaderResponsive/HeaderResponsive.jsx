@@ -9,7 +9,7 @@ export default function HeaderResponsive() {
 
   const isHomePage = router.pathname === "/";
   const buttonText = isHomePage ? "Cómo jugar" : "Jugar";
-  const toPath = isHomePage ? "/instructions" : "/";
+  const toPath = isHomePage ? "/" : "/instructions";
 
   return (
     <div className="navbar bg-lilac-light">
