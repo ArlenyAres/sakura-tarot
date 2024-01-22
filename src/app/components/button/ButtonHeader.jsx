@@ -16,7 +16,7 @@ export default function ButtonHeader({ path1, path2, buttonText1, buttonText2, b
     return(
         <>
             <button
-                className={`${ buttonColor } text-white px-9 py-2 rounded-full font-bold`}
+                className={`${ buttonColor } text-white px-5 py-2 rounded-full font-bold`}
                 onClick={handleClick}>
                     { currentPath === path1 ? buttonText1 : buttonText2 }
             </button>

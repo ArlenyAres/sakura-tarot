@@ -4,11 +4,6 @@ import ButtonHeader from "../button/ButtonHeader";
 import Logo from "../Logo/Logo";
 
 export default function HeaderResponsive() {
-  // const router = useRouter();
-
-  // const isHomePage = router.pathname === "/";
-  // const buttonText = isHomePage ? "Cómo jugar" : "Jugar";
-  // const toPath = isHomePage ? "/" : "/instructions";
 
   return (
     <div className="navbar bg-lilac-light">

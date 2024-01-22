@@ -51,8 +51,8 @@ const Home = () => {
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
   return (
-    <main>
-      <section className="w-[95%] mt-5 pl-10 pb-20">
+    <main className="bg-purple-medium pt-10 px-10">
+      <section className="px-10 py-10 bg-beige flex justify-center rounded-3xl">
         <ul className="flex flex-row gap-1">
           {cards.map((card) => (
             <TarotCard
