@@ -1,5 +1,6 @@
 import HeaderForm from "../components/Login/HeaderForm";
 import Login from "../components/Login/Login";
+import HeaderResponsive from "../components/HeaderResponsive/HeaderResponsive";
 
 export default function LoginPage(){
     return(
