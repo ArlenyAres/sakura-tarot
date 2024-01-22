@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Overlock } from 'next/font/google';
 import './globals.css';
-import Footer from './components/footer/footer';
+import Footer from './components/footer/Footer';
 import HeaderResponsive from './components/HeaderResponsive/HeaderResponsive';
 
 const overlockFont = Overlock({
