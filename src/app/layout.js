@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { inter } from 'next/font/google';
 import { Overlock } from 'next/font/google';
 import './globals.css';
 import Header from './components/header/header';
