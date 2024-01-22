@@ -4,19 +4,19 @@
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  max-width: 30vW;
-  max-height: 70vh;/* Ajusta este valor a lo que necesites */
-  margin: 10 auto;
-  border: 1px solid #1f1b1b;
-  border-color: blueviolet;
+  /* max-width: 100vw;
+  max-height: 70vh; */
+  /* margin: 10 auto; */
+  /* border: 1px solid #1f1b1b;
+  border-color: blueviolet; */
 }
 
 .carousel{
   box-sizing: border-box;
   margin: 0 auto;
   background-color:#92609c;
-  height: 508px;
-  width: 393px;
+  height: 25rem;
+  width: 100vw;
 }
   
 .slide-carousel{
@@ -27,19 +27,19 @@
 }
 
 .carousel-slide img {
-  max-height: 50vh;
-  margin: 0 auto;
+  /* max-height: 50vh; */
+  /* margin: 0 auto; */
 }                                            
 
 .slide-text{
   position: relative;
   left: 50%;
   font-size: 20px;
-  font-family: overlock;
+  /* font-family: overlock; */
   font-weight: 600;
   color: #4f2757;
-  width: 200px;
-  height:330px;
+  width: 30rem;
+  height:15rem;
   text-align: center;
   transform:translate(-50%, -95%);
  letter-spacing: 0.4px;
@@ -48,8 +48,8 @@
 .arrow {
   position: relative;
   top: 50%;
-  left: 80%;
-  right: 80%;
+  left: 90%;
+  right: 90%;
   font-size: 30px;
   cursor: pointer;
   color: #4f2757;
@@ -69,7 +69,7 @@
 .arrowNext {
   position: absolute;
   top: 30%;
-  right: 40%;
+  right: 90%;
   transform: translateY(-50%);
   font-size: 40px;
   cursor: pointer;
@@ -116,7 +116,7 @@
 
 
 @media only screen and (max-width: 768px) {
-  .container-carousel {
+  /* .container-carousel {
     margin-left: 2%; 
     margin-right: 2%; 
   }
@@ -124,11 +124,11 @@
   .carousel-slide {
     margin-left: 2%; 
     margin-right: 2%; 
-  }
+  } */
 
-  .navigation-dots {
+  /* .navigation-dots {
     display:none
-  }
+  } */
 
   .arrowNext {
     position: absolute;
