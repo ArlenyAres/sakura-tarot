@@ -1,7 +1,5 @@
 "use client";
 
-// import { useState } from "react";
-
 import React from 'react';
 
 function Modal() {
@@ -9,7 +7,7 @@ function Modal() {
     <div className="w-full md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 flex flex-col items-center pb-5 bg-beige rounded-lg shadow dark:bg-purple-text">
       <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-purple-text">
         <h3 className="text-base font-semibold text-purple-text dark:text-white text-center">
-          Entra tu nombre para guardar las lecturas de tarot:
+          Entra tu nombre para revelar y guardar las lecturas de tarot:
         </h3>
         <span className="sr-only">Close modal</span>
       </div>
