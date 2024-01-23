@@ -1,15 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import MyButton from "../button/button";
+import ButtonHeader from "../button/ButtonHeader";
 import Logo from "../Logo/Logo";
 
 export default function HeaderResponsive() {
-  const router = useRouter();
-
-  const isHomePage = router.pathname === "/";
-  const buttonText = isHomePage ? "Cómo jugar" : "Jugar";
-  const toPath = isHomePage ? "/instructions" : "/";
 
   return (
     <div className="navbar bg-lilac-light">
@@ -71,13 +65,14 @@ export default function HeaderResponsive() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a href={toPath}>
-          <MyButton
+          <ButtonHeader
             className="sm:px-2 md:px-5 lg:px-9"
             buttonColor="bg-purple-dark hover:bg-purple-medium"
-            buttonText={buttonText}
+            path1="/"
+            path2="/instructions"
+            buttonText1="Cómo jugar"
+            buttonText2="Jugar"
           />
-        </a>
       </div>
     </div>
   );
