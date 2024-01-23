@@ -47,6 +47,7 @@ const Home = () => {
 
   const handleRevelarClick = () => {
     setRevealCards(true);
+    console.log(selectedCards)
   };
 
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];

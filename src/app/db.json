@@ -1,16 +1,6 @@
 {
     "users": [
-        {
-        "id": "1",
-        "name": "Florence",
-        "reading": "hello",
-        "date": "21/11/2023"
-    },
-    {
-        "id": "2",
-        "name": "Daisy",
-        "reading": "hello",
-        "date": "21/11/2023"
-    }
+       
 ]
 }
+//poner en un estado que se renderize 

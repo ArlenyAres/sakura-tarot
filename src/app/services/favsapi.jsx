@@ -7,7 +7,8 @@ export const favsapi = () => {
 
     const baseUrl = 'http://localhost:8000/users'
 
-    const createFav = async (data) => {
+    const createFav = async (data) => { 
+        // tenemos que conectar esa function a un componente (Boton revelar)
         const response = await axios.post(baseUrl, data);
         return response;
     }
