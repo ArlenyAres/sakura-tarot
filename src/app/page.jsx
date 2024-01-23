@@ -3,19 +3,17 @@
 import React, { useState, useEffect } from "react";
 import TarotCard from "../app/components/TarotCard/TarotCard";
 import { getCards } from "../app/lib/data";
-import Button from "./components/button/Button";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
-  const [revealCards, setRevealCards] = useState(false); 
+  const [revealCards, setRevealCards] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getCards();
         setCards(data);
-
 
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
@@ -25,7 +23,7 @@ const Home = () => {
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
   const handleCardSelect = (card, isSelected) => {
     if (isSelected && selectedCards.length >= 3) {
@@ -33,19 +31,27 @@ const Home = () => {
       return;
     }
 
-    setSelectedCards(prevSelectedCards => {
+    setSelectedCards((prevSelectedCards) => {
       if (isSelected) {
-        if (prevSelectedCards.some(selectedCard => selectedCard.id === card.id)) {
+        if (
+          prevSelectedCards.some((selectedCard) => selectedCard.id === card.id)
+        ) {
           return prevSelectedCards;
         }
         return [...prevSelectedCards, card];
       } else {
-        return prevSelectedCards.filter(selectedCard => selectedCard.id !== card.id);
+        return prevSelectedCards.filter(
+          (selectedCard) => selectedCard.id !== card.id
+        );
       }
     });
   };
 
   const handleRevelarClick = () => {
+    if (selectedCards.length < 3) {
+      alert("lalala");
+      return;
+    }
     setRevealCards(true);
   };
 
@@ -60,7 +66,7 @@ const Home = () => {
               key={card.id}
               card={card}
               onSelect={handleCardSelect}
-              disabled={revealCards} 
+              disabled={revealCards}
             />
           ))}
         </ul>
@@ -79,9 +85,14 @@ const Home = () => {
         {cardRoles.map((role, index) => (
           <div key={index} className="flex flex-col items-center">
             <h3 className="text-white">{role}</h3>
-            <div className={`w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark ${revealCards ? 'revealed' : ''}`}>
+            <div
+              className={`w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark ${revealCards ? "revealed" : ""}`}
+            >
               {revealCards && selectedCards[index] && (
-                <img src={selectedCards[index].sakuraCard} alt={selectedCards[index].spanishName} />
+                <img
+                  src={selectedCards[index].sakuraCard}
+                  alt={selectedCards[index].spanishName}
+                />
               )}
             </div>
             {revealCards && selectedCards[index] && (
