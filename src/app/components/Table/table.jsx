@@ -1,11 +1,7 @@
-'use client'
+import Link from 'next/link';
 
-import MyButton from "../button/button";
-import { useRouter } from 'next/navigation';
 
-export default function table() {
-    const router = useRouter();
-
+const table = () => {
     return (
 
         <div className="overflow-x-auto">
@@ -158,12 +154,8 @@ export default function table() {
                 </tfoot>
 
             </table>
-            <div className="bg-purple-medium p-4 flex justify-end md:hidden">
-                <MyButton
-                    buttonColor="bg-purple-dark"
-                    buttonText={buttonText}
-                />
-            </div>
+
         </div>
     )
 }
+export default Table
