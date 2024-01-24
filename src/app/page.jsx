@@ -15,6 +15,9 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const data = await getCards();
+        setCards(data);
+
+
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
       } catch (error) {
@@ -23,6 +26,7 @@ const Home = () => {
     };
 
     fetchData();
+
 
     const modalTimeout = setTimeout(() => {
       setShowModal(true);
@@ -34,6 +38,8 @@ const Home = () => {
   const handleModalClose = () => {
     setShowModal(false);
   };
+  }, []);
+
 
   const handleCardSelect = (card, isSelected) => {
     if (isSelected && selectedCards.length >= 3) {
@@ -63,7 +69,6 @@ const Home = () => {
       return;
     }
     setRevealCards(true);
-    console.log(selectedCards);
     await addReading(selectedCards);
   };
 
