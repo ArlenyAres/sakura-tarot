@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import TarotCard from "../app/components/TarotCard/TarotCard";
 import { getCards } from "../app/lib/data";
-import Button from "./components/button/Button";
+import Modal from "../app/components/Modal/Modal";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -26,6 +26,11 @@ const Home = () => {
 
     fetchData();
   }, []); 
+
+      const modalTimeout = setTimeout(() => {
+        setShowModal(true);
+      }, 2000);
+  
 
   const handleCardSelect = (card, isSelected) => {
     if (isSelected && selectedCards.length >= 3) {
@@ -52,6 +57,7 @@ const Home = () => {
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
   return (
+    {showModal && <Modal />}
     <main className="bg-purple-medium pt-10 px-10">
       <section className="px-10 py-10 bg-beige flex justify-center rounded-3xl">
         <ul className="flex flex-row gap-1">
