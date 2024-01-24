@@ -3,17 +3,20 @@
 import React, { useState, useEffect } from "react";
 import TarotCard from "../app/components/TarotCard/TarotCard";
 import { addReading, getCards } from "../app/lib/data";
+import Modal from "../app/components/Modal/Modal";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
   const [revealCards, setRevealCards] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getCards();
         setCards(data);
+
 
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
@@ -23,7 +26,20 @@ const Home = () => {
     };
 
     fetchData();
+
+
+    const modalTimeout = setTimeout(() => {
+      setShowModal(true);
+    }, 2000);
+
+    return () => clearTimeout(modalTimeout);
   }, []);
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+  }, []);
+
 
   const handleCardSelect = (card, isSelected) => {
     if (isSelected && selectedCards.length >= 3) {
@@ -53,7 +69,6 @@ const Home = () => {
       return;
     }
     setRevealCards(true);
-    console.log(selectedCards)
     await addReading(selectedCards);
   };
 
@@ -103,6 +118,7 @@ const Home = () => {
           </div>
         ))}
       </section>
+      {showModal && <Modal onClose={handleModalClose} />}
     </main>
   );
 };
