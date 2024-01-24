@@ -51,18 +51,37 @@ const Home = () => {
 
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
+  // Nueva lógica para organizar las cartas en un semicírculo
+  const totalCards = cards.length;
+  const angleIncrement = Math.PI / (totalCards - 1);
+  const radius = 300; // Ajusta el radio según sea necesario
+  const center = { x: 400, y: 300 }; // Ajusta el centro según sea necesario
+
+
   return (
     <main className="bg-purple-medium pt-10 px-10">
-      <section className="px-10 py-10 bg-beige flex justify-center rounded-3xl">
+      <section className="px-10 py-10 bg-beige flex justify-center rounded-3xl relative ">
         <ul className="flex flex-row gap-1">
-          {cards.map((card) => (
-            <TarotCard
-              key={card.id}
-              card={card}
-              onSelect={handleCardSelect}
-              disabled={revealCards} 
-            />
-          ))}
+          {cards.map((card, index) => {
+            const angle = index * angleIncrement - Math.PI / 1;
+            const x = center.x + radius * Math.cos(angle) - 450; // Ajuste para centrar la tarjeta
+            const y = center.y + radius * Math.sin(angle);
+
+            const cardStyle = {
+              transform: `translate(${x}px, ${y}px)`,
+              position: "absolute",
+            };
+
+            return (
+              <TarotCard
+                key={card.id}
+                card={card}
+                onSelect={handleCardSelect}
+                disabled={revealCards}
+                style={cardStyle}
+              />
+            );
+          })}
         </ul>
       </section>
 
