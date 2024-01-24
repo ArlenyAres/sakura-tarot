@@ -12,9 +12,16 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getCards();
-        setCards(data);
+        //old code
+        // const data = await getCards();
+        // setCards(data);
+        
+      // new code - changed data for response
+      const response = await fetch("http://localhost:3001/cards");
+      const data = await response.json();
+      setCards(data);
 
+      //old code
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
       } catch (error) {
@@ -53,9 +60,24 @@ const Home = () => {
       return;
     }
     setRevealCards(true);
-    await addReading(selectedCards);
-  };
+    // await addReading(selectedCards);
+  
 
+ // new code Experiment -Send selected cards to the fake JSON server
+ try {
+  await fetch("http://localhost:3001/readings", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ reading: selectedCards }),
+  });
+
+} catch (error) {
+    console.error("Error sending readings:", error);
+  }
+};
+// old code
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
   return (
