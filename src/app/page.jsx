@@ -75,17 +75,17 @@ const Home = () => {
         </button>
       </div>
 
-      <section className="flex flex-row gap-10 justify-center pb-10">
+      <section className="grid grid-cols-1 gap-10 px-8 pb-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {cardRoles.map((role, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <h3 className="text-white">{role}</h3>
-            <div className={`w-20 h-40 bg-beige rounded-3xl border-dashed border-4 border-purple-dark ${revealCards ? 'revealed' : ''}`}>
+          <div key={index} className="card card-side bg-beige shadow-xl border-dashed border-4 border-purple-dark flex flex-col justify-center items-center">
+            <h3 className="text-purple-text card-title text-3xl justify-center pt-6">{role}</h3>
+            <div className={`card-body max-h-100 px-4 ${revealCards ? 'revealed' : ''}`}>
               {revealCards && selectedCards[index] && (
-                <img src={selectedCards[index].sakuraCard} alt={selectedCards[index].spanishName} />
+                  <img src={selectedCards[index].sakuraCard} alt={selectedCards[index].spanishName} style={{ maxHeight: '300px' }}/>
               )}
             </div>
             {revealCards && selectedCards[index] && (
-              <p className="text-white pt-5">{`${selectedCards[index].spanishName}: ${selectedCards[index].meaning}`}</p>
+              <p className="text-purple-text pb-5 px-5 text-2xl font-medium">{`${selectedCards[index].spanishName}: ${selectedCards[index].meaning}`}</p>
             )}
           </div>
         ))}
