@@ -8,12 +8,12 @@ const TarotCard = ({ card, onSelect, style }) => {
 
   return (
     <div className="tarot-card" onClick={handleClick} style={style}>
-      <div className="min-w-12 min-h-28 overflow-hidden">
+      <div className="w-12 h-28 overflow-hidden">
         <Image
           src={card.cardsReverse.sakuraReverse}
           alt="Reverso"
-          layout="fill"
-          objectFit="cover"
+          width={80}
+          height={160}
         />
       </div>
     </div>
