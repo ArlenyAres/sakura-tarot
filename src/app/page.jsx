@@ -53,6 +53,7 @@ const Home = () => {
       return;
     }
     setRevealCards(true);
+    console.log(selectedCards)
     await addReading(selectedCards);
   };
 
