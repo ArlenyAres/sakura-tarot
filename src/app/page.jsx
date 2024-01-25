@@ -2,21 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import TarotCard from "../app/components/TarotCard/TarotCard";
-import { getCards } from "../app/lib/data";
-import Button from "./components/button/Button";
+import { addReading, getCards } from "../app/lib/data";
+import Modal from "../app/components/Modal/Modal";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
-  const [revealCards, setRevealCards] = useState(false); 
+  const [revealCards, setRevealCards] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getCards();
-        setCards(data);
-
-
         const shuffledCards = [...data].sort(() => Math.random() - 0.5);
         setCards(shuffledCards);
       } catch (error) {
@@ -25,7 +23,17 @@ const Home = () => {
     };
 
     fetchData();
-  }, []); 
+
+    const modalTimeout = setTimeout(() => {
+      setShowModal(true);
+    }, 2000);
+
+    return () => clearTimeout(modalTimeout);
+  }, []);
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
   const handleCardSelect = (card, isSelected) => {
     if (isSelected && selectedCards.length >= 3) {
@@ -33,20 +41,29 @@ const Home = () => {
       return;
     }
 
-    setSelectedCards(prevSelectedCards => {
+    setSelectedCards((prevSelectedCards) => {
       if (isSelected) {
-        if (prevSelectedCards.some(selectedCard => selectedCard.id === card.id)) {
+        if (
+          prevSelectedCards.some((selectedCard) => selectedCard.id === card.id)
+        ) {
           return prevSelectedCards;
         }
         return [...prevSelectedCards, card];
       } else {
-        return prevSelectedCards.filter(selectedCard => selectedCard.id !== card.id);
+        return prevSelectedCards.filter(
+          (selectedCard) => selectedCard.id !== card.id
+        );
       }
     });
   };
 
-  const handleRevelarClick = () => {
+  const handleRevelarClick = async () => {
+    if (selectedCards.length < 3) {
+      alert("Debes seleccionar tres cartas");
+      return;
+    }
     setRevealCards(true);
+    await addReading(selectedCards);
   };
 
   const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
@@ -60,7 +77,7 @@ const Home = () => {
               key={card.id}
               card={card}
               onSelect={handleCardSelect}
-              disabled={revealCards} 
+              disabled={revealCards}
             />
           ))}
         </ul>
@@ -90,8 +107,10 @@ const Home = () => {
           </div>
         ))}
       </section>
+      {showModal && <Modal onClose={handleModalClose} />}
     </main>
   );
 };
 
 export default Home;
+

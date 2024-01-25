@@ -6,6 +6,7 @@ export default function LoginPage(){
     return(
         <div className="bg-purple-dark pb-14">
             <HeaderResponsive />
+            //header form title
             <HeaderForm
                 heading="Tu destino te espera en tu cuenta Mystika"
                 paragraph="¿Aún no tienes?"
