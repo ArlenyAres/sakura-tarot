@@ -46,7 +46,7 @@ function Modal({ onClose }) {
         />
         <button
         onClick={handleSaveClick}
-        className="md:w-[28%] lg:w-1/6 xl:w-[28%] 2xl:w-2/6 text-white bg-purple-dark hover:bg-purple-medium focus:outline-none focus:ring-purple-medium font-bold rounded-full text-lg px-8 py-2 mt-3 dark:bg-purple-medium dark:hover:bg-purple-dark dark:focus:ring-purple-dark"
+        className="md:w-[28%] lg:w-1/6 xl:w-[28%] 2xl:w-2/6 text-white bg-purple-dark hover:bg-purple-medium focus:outline-none focus:ring-purple-medium font-bold rounded-full text-lg px-14 py-2 mt-3 dark:bg-purple-medium dark:hover:bg-purple-dark dark:focus:ring-purple-dark"
         >
           <span className='flex justify-center'>Empezar</span>
         </button>
