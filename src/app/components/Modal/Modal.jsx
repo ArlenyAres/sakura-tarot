@@ -1,12 +1,17 @@
 "use client";
-
+import { createUser } from '@/app/services/historialUser';
 import React, { useState } from 'react';
 
 function Modal({ onClose }) {
   const [name, setName] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
+    e.target.value
     setName(e.target.value);
+    await createUser({
+      
+    })
+
   };
 
   const handleSaveClick = () => {
