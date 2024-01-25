@@ -1,5 +1,5 @@
 'use client'
-import { sakuraapi } from '@/app/services/sakuraapi'
+import { sakuraapi } from '@/app/services/historialUser'
 import React, { useEffect, useState } from 'react'
 
 function Readings({ fav, setFav }) {
