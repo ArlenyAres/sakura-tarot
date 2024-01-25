@@ -8,7 +8,7 @@ export default function HeaderResponsive() {
   return (
     <div className="navbar bg-lilac-light">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown text-purple-text">
           <div
             tabIndex={0}
             role="button"
@@ -19,7 +19,7 @@ export default function HeaderResponsive() {
               className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="black"
             >
               <path
                 strokeLinecap="round"
@@ -34,21 +34,13 @@ export default function HeaderResponsive() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-beige rounded-box w-52"
           >
             <li>
-              <a>Ver tu destino</a>
+              <a href="/">Ver tu destino</a>
             </li>
             <li>
-              <a>Mi cuenta</a>
-              <ul className="p-2">
-                <li>
-                  <a>Crear mi cuenta</a>
-                </li>
-                <li>
-                  <a>Mis lecturas de tarot</a>
-                </li>
-              </ul>
+              <a className="text-purple-text" href="/historial">Mis lecturas de tarot</a>
             </li>
             <li>
-              <a>Cómo jugar</a>
+              <a href="/instructions">Cómo jugar</a>
             </li>
           </ul>
         </div>
@@ -57,10 +49,7 @@ export default function HeaderResponsive() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal font-semibold text-color text-base px-1">
           <li>
-            <a>Crear mi cuenta</a>
-          </li>
-          <li>
-            <a>Mis lecturas de tarot</a>
+            <a className="text-purple-text" href="/historial">Mis lecturas de tarot</a>
           </li>
         </ul>
       </div>
