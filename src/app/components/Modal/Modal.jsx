@@ -1,22 +1,27 @@
 "use client";
 import { createUser } from '@/app/services/historialUser';
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function Modal({ onClose }) {
-  const [name, setName] = useState('');
+  const [userName, setUserName] = useState('');
+  const nameId = uuidv4();
+  const newDate = new Date().toLocaleDateString();
 
   const handleInputChange = async (e) => {
     e.target.value
-    setName(e.target.value);
+    
     await createUser({
-      
+      id: nameId, date: newDate, name: userName, reading: []
     })
-
+    setUserName(userName)
+    localStorage.setItem('userNameId', nameId)
+    console.log(nameId, userName)
   };
 
   const handleSaveClick = () => {
-    if (name.trim() !== '') {
-      onClose(name);
+    if (userName.trim() !== '') {
+      onClose(userName);
     }
   };
 
@@ -28,26 +33,25 @@ function Modal({ onClose }) {
         </h3>
         <span className="sr-only">Close modal</span>
       </div>
-      <div className="p-4 md:p-5">
+      <form onSubmit={handleInputChange} className="p-4 md:p-5">
         <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-purple-text dark:text-white">
         </label>
         <input
           type="text"
-          name="firstName"
-          id="firstName"
           placeholder="Nombre"
-          value={name}
-          onChange={handleInputChange}
+          value={userName}
+          onChange={(e) => {setUserName(e.target.value)}}
           className="w-full bg-white border border-lilac-medium text-purple-text text-sm rounded-lg focus:ring-purple-dark focus:border-purple-medium p-2.5 dark:bg-purple-dark dark:border-purple-dark dark:placeholder-lilac-medium dark:text-white"
           required
         />
-      </div>
-      <button
+        <button
         onClick={handleSaveClick}
         className="md:w-[28%] lg:w-1/6 xl:w-[28%] 2xl:w-2/6 text-white bg-purple-dark hover:bg-purple-medium focus:outline-none focus:ring-purple-medium font-bold rounded-full text-lg px-5 py-2.5 text-center dark:bg-purple-medium dark:hover:bg-purple-dark dark:focus:ring-purple-dark"
       >
         Empezar
       </button>
+      </form>
+      
     </div>
   );
 }
