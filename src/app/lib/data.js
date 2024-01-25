@@ -1,3 +1,6 @@
+
+
+
 export async function getCards() {
   const response = await fetch(
     "https://6388b6e5a4bb27a7f78f96a5.mockapi.io/sakura-cards/"
@@ -18,4 +21,15 @@ export async function addReading(reading) {
   });
   const data = await response.json();
   return data;
+}
+
+export async function getAllData(){
+  const response = await fetch('http://localhost:8000/readings',{
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  
+  })
+  return response;
 }
