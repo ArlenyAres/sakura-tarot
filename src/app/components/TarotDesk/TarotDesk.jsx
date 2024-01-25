@@ -26,7 +26,7 @@ const TarotDesk = () => {
     }, []);
 
     const handleCardSelect = (card, isSelected) => {
-        if (isSelected && selectedCards.length > 3) {
+        if (isSelected && selectedCards.length > 2) {
         alert("Solo puedes elegir tres cartas cada lectura");
         return;
         }
@@ -57,8 +57,6 @@ const TarotDesk = () => {
       };
 
     const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
-
-  
 
         return (
         <div className="bg-purple-medium pt-10 px-10 min-h-full">
@@ -119,7 +117,7 @@ const TarotDesk = () => {
               )}
             </div>
             {revealCards && selectedCards[index] && (
-              <p className="text-purple-text pb-5 px-5 text-2xl font-medium">{`${selectedCards[index].spanishName}: ${selectedCards[index].meaning}`}</p>
+              <p className="text-purple-text pb-5 px-5 text-2xl font-medium text-center"><span className="font-bold uppercase">{`${selectedCards[index].spanishName}: `}</span><br />{`${selectedCards[index].meaning}`}</p>
             )}
           </div>
         ))}
