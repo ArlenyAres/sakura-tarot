@@ -52,22 +52,7 @@ const TarotFan = () => {
 
     const cardRoles = ["PASADO", "PRESENTE", "FUTURO"];
 
-    const totalCards = cards.length;
-    const fanWidth = -26; // Ancho
-    const center = { x: 700, y: 5 }; //posicion
-
-    const calculateCardStyle = (index) => {
-        const angle = (index / (totalCards - 7900)) * Math.PI;
-        const x = center.x + index * fanWidth - (totalCards * fanWidth) / 90;
-        const y = center.y - fanWidth * Math.sin(angle);
-
-        const scaleFactor = 0.76 - Math.abs(index - totalCards / 2) / totalCards; // Ajusta la escala según la posición de la carta
-
-        return {
-        transform: `translate(${x}px, ${y}px) rotate(${angle}rad) scale(${scaleFactor})`,
-        position: "relative",
-        };
-    };
+  
 
         return (
         <div className="bg-purple-medium pt-10 min-h-full">
@@ -81,11 +66,11 @@ const TarotFan = () => {
                 card={card}
                 onSelect={handleCardSelect}
                 disabled={revealCards}
-                style={calculateCardStyle(index)}
+                style={{}}
             /></li>
             ))}
         </ul>
-         {/* MODALIDAD MOBILE*/}
+            {/* MODALIDAD MOBILE*/}
         <ul className="flex flex-wrap gap-1 md:hidden">
             {cards.map((card, index) => (
                 <li key={card.id}> 
@@ -94,7 +79,10 @@ const TarotFan = () => {
                 card={card}
                 onSelect={handleCardSelect}
                 disabled={revealCards}
-                style={{}}
+                style={{
+                    width: "50%", 
+                    margin: "0.2rem", 
+                }}
             /></li>
             ))}
         </ul>
