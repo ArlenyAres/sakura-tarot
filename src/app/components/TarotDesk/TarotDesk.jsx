@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import TarotCard from "../TarotCard/TarotCard";
 import { getCards } from "../../lib/data";
 
-const TarotFan = () => {
+const TarotDesk = () => {
     const [cards, setCards] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
     const [revealCards, setRevealCards] = useState(false);
@@ -81,7 +81,7 @@ const TarotFan = () => {
                 disabled={revealCards}
                 style={{
                     width: "50%", 
-                    margin: "0.2rem", 
+                    margin: "0.2rem", //margen entre las cartas
                 }}
             /></li>
             ))}
@@ -115,4 +115,4 @@ const TarotFan = () => {
     </div>);
 };
 
-export default TarotFan;
+export default TarotDesk;

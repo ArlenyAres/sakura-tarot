@@ -1,17 +1,29 @@
-"use client";
+import { useState } from "react";
 import Image from "next/image";
+import './TarotCardStyles.css'
 
-const TarotCard = ({ card, onSelect, style }) => {
+const TarotCard = ({ card, onSelect, style, disabled }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
   const handleClick = () => {
-    onSelect(card, true);
+    if (!disabled) {
+      onSelect(card, !isSelected);
+      setIsSelected((prevIsSelected) => !prevIsSelected);
+    }
   };
 
   return (
-    <div className="tarot-card" onClick={handleClick} style={style}>
-      <div className=" overflow-hidden">
+    <div
+      className={`tarot-card ${isSelected ? "selected" : ""} ${
+        disabled ? "disabled" : ""
+      }`}
+      onClick={handleClick}
+      style={style}
+    >
+      <div className="overflow-hidden">
         <Image
-          src={card.cardsReverse.sakuraReverse}
-          alt="Reverso"
+          src={isSelected ? card.cardsReverse.sakuraReverse : card.cardsReverse.sakuraReverse}
+          alt={isSelected ? card.spanishName : "Reverso"}
           width={80}
           height={160}
         />
@@ -21,5 +33,4 @@ const TarotCard = ({ card, onSelect, style }) => {
 };
 
 export default TarotCard;
-
 

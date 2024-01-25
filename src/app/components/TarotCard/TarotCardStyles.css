@@ -1,0 +1,15 @@
+.tarot-card {
+    transition:
+    transform 0.3s,
+    filter 0.3s;
+}
+
+.tarot-card.selected {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.tarot-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
