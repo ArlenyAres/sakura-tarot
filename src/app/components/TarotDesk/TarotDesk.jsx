@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import TarotCard from "../TarotCard/TarotCard";
 import { getCards } from "../../lib/data";
 import Image from "next/image";
+import { addReading } from "../../lib/data";
 
 const TarotDesk = () => {
     const [cards, setCards] = useState([]);

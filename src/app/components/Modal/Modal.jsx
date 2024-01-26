@@ -33,7 +33,7 @@ function Modal({ onClose }) {
         </h3>
         <span className="sr-only">Close modal</span>
       </div>
-      <form onSubmit={handleInputChange} className="p-4 md:p-5">
+      <form onSubmit={handleInputChange} className="p-4 md:p-5 flex flex-col items-center">
         <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-purple-text dark:text-white">
         </label>
         <input
@@ -45,15 +45,16 @@ function Modal({ onClose }) {
           required
         />
         <button
-        onClick={handleSaveClick}
-        className="md:w-[28%] lg:w-1/6 xl:w-[28%] 2xl:w-2/6 text-white bg-purple-dark hover:bg-purple-medium focus:outline-none focus:ring-purple-medium font-bold rounded-full text-lg px-8 py-2 mt-3 dark:bg-purple-medium dark:hover:bg-purple-dark dark:focus:ring-purple-dark"
+          onClick={handleSaveClick}
+          className=" text-white bg-purple-dark hover:bg-purple-medium focus:outline-none focus:ring-purple-medium font-bold rounded-full text-lg px-8 py-2 mt-3 dark:bg-purple-medium dark:hover:bg-purple-dark dark:focus:ring-purple-dark"
         >
           <span className='flex justify-center'>Empezar</span>
         </button>
       </form>
-      
     </div>
   );
+  
+  ;
 }
 
 export default Modal;

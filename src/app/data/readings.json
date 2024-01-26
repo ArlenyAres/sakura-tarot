@@ -554,6 +554,183 @@
       "date": "25/01/2024",
       "name": "",
       "reading": []
+    },
+    {
+      "id": "3d15",
+      "reading": [
+        {
+          "id": "20",
+          "cardNumber": 20,
+          "spanishName": "Brillo",
+          "englishName": "The Glow",
+          "kanji": "灯",
+          "Rōmaji": "Akari",
+          "appeardManga": "18",
+          "appeardAnime": "18",
+          "clowCard": "https://i.ibb.co/M7ynsLg/Brillo.jpg",
+          "sakuraCard": "https://i.ibb.co/2YDm0j7/Brillo-Sakura.jpg",
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          },
+          "meaning": "Esta carta simboliza la iluminación.",
+          "__v": 0
+        },
+        {
+          "id": "31",
+          "cardNumber": 31,
+          "spanishName": "Dulce",
+          "englishName": "The Sweet",
+          "kanji": "甘",
+          "Rōmaji": "Ama",
+          "appeardManga": "",
+          "appeardAnime": "29",
+          "clowCard": "https://i.ibb.co/1Ggd29p/Dulce.jpg",
+          "sakuraCard": "https://i.ibb.co/HpthzhS/Dulce-Sakura.jpg",
+          "meaning": "Simboliza la dulzura, la infancia, la protección de nuestros padres.",
+          "__v": 0,
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          }
+        },
+        {
+          "id": "25",
+          "cardNumber": 25,
+          "spanishName": "Canción",
+          "englishName": "The Song",
+          "kanji": "歌",
+          "Rōmaji": "Uta",
+          "appeardManga": "",
+          "appeardAnime": "23",
+          "clowCard": "https://i.ibb.co/hmyxC61/Canci-n.jpg",
+          "sakuraCard": "https://i.ibb.co/3kmsTBj/Canci-n-Sakura.jpg",
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          },
+          "meaning": " Simboliza la paz, la tranquilidad y la alegría.",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "id": "f2ac",
+      "reading": [
+        {
+          "id": "25",
+          "cardNumber": 25,
+          "spanishName": "Canción",
+          "englishName": "The Song",
+          "kanji": "歌",
+          "Rōmaji": "Uta",
+          "appeardManga": "",
+          "appeardAnime": "23",
+          "clowCard": "https://i.ibb.co/hmyxC61/Canci-n.jpg",
+          "sakuraCard": "https://i.ibb.co/3kmsTBj/Canci-n-Sakura.jpg",
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          },
+          "meaning": " Simboliza la paz, la tranquilidad y la alegría.",
+          "__v": 0
+        },
+        {
+          "id": "21",
+          "cardNumber": 21,
+          "spanishName": "Movimiento",
+          "englishName": "The Move",
+          "kanji": "移",
+          "Rōmaji": "Utsuri",
+          "appeardManga": "",
+          "appeardAnime": "19",
+          "clowCard": "https://i.ibb.co/0f92bH5/Movimiento.jpg",
+          "sakuraCard": "https://i.ibb.co/R0W9hTz/Movimiento-Sakura.jpg",
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          },
+          "meaning": "Simboliza un cambio, un movimiento.",
+          "__v": 0
+        },
+        {
+          "id": "34",
+          "cardNumber": 34,
+          "spanishName": "Creación",
+          "englishName": "The Create",
+          "kanji": "創",
+          "Rōmaji": "Sō",
+          "appeardManga": "",
+          "appeardAnime": "31",
+          "clowCard": "https://i.ibb.co/Jqs1nHj/Creaci-n.jpg",
+          "sakuraCard": "https://i.ibb.co/sWnYwzC/Creaci-n-Sakura.jpg",
+          "meaning": "Simboliza la creación, la imaginación, el desafío.",
+          "__v": 0,
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f615",
+      "reading": [
+        {
+          "id": "49",
+          "cardNumber": 49,
+          "spanishName": "Oscuridad",
+          "englishName": "The Dark",
+          "kanji": "闇",
+          "Rōmaji": "Yami",
+          "appeardManga": "21",
+          "appeardAnime": "42",
+          "clowCard": "https://i.ibb.co/wWcWD0n/Oscuridad.jpg",
+          "sakuraCard": "https://i.ibb.co/QXgNZxr/Oscuridad-Sakura.jpg",
+          "meaning": "Simboliza lo oculto, lo que aún está por descubrir, la ventaja.",
+          "__v": 0,
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          }
+        },
+        {
+          "id": "21",
+          "cardNumber": 21,
+          "spanishName": "Movimiento",
+          "englishName": "The Move",
+          "kanji": "移",
+          "Rōmaji": "Utsuri",
+          "appeardManga": "",
+          "appeardAnime": "19",
+          "clowCard": "https://i.ibb.co/0f92bH5/Movimiento.jpg",
+          "sakuraCard": "https://i.ibb.co/R0W9hTz/Movimiento-Sakura.jpg",
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          },
+          "meaning": "Simboliza un cambio, un movimiento.",
+          "__v": 0
+        },
+        {
+          "id": "48",
+          "cardNumber": 48,
+          "spanishName": "Arena",
+          "englishName": "The Sand",
+          "kanji": "砂",
+          "Rōmaji": "Suna",
+          "appeardManga": "",
+          "appeardAnime": "41",
+          "clowCard": "https://i.ibb.co/dK9q5Np/Arena.jpg",
+          "sakuraCard": "https://i.ibb.co/L8KtZjv/Arena-Sakura.jpg",
+          "meaning": "Simboliza la seguridad y la tranquilidad.",
+          "__v": 0,
+          "cardsReverse": {
+            "clowReverse": "https://i.ibb.co/LJSmQ4f/Reverso-Clow.jpg",
+            "sakuraReverse": "https://i.ibb.co/XxrvMJ2/Reverso-Sakura.jpg"
+          }
+        }
+      ]
     }
   ]
 }
