@@ -62,7 +62,7 @@ const TarotDesk = () => {
         <div className="bg-purple-medium pt-10 px-10 min-h-full">
         <section className="px-10 py-10 bg-beige flex justify-center rounded-3xl relative">
             {/* MODALIDAD DESKTOP*/}
-        <ul className="md:flex flex-row gap-1 hidden"> 
+        <ul className="md:flex flex-wrap gap-4 hidden"> 
             {cards.map((card) => (
                 <li key={card.id}> 
                 <TarotCard
